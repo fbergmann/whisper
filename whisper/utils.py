@@ -1,12 +1,12 @@
 import json
 import os
 import re
-import sys
+
 import zlib
 from typing import Callable, List, Optional, TextIO
+import locale
 
-system_encoding = sys.getdefaultencoding()
-
+system_encoding = locale.getpreferredencoding(False)
 if system_encoding != "utf-8":
 
     def make_safe(string):
